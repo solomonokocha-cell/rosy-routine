@@ -1,0 +1,5 @@
+const guideState = initRosyShell('guides');
+guideState.qna = Array.isArray(guideState.qna) ? guideState.qna : [];
+function renderQuestions() { document.getElementById('qnaList').innerHTML = guideState.qna.length ? guideState.qna.map((item) => `<article class="feature-card"><p class="eyebrow">${item.subject} · ${item.status}</p><h2>${item.question}</h2><p>${item.answer || 'A Garden Guide has not replied yet. Your question is safely planted.'}</p>${item.answer ? '<span class="mission-reward">Guide reply received</span>' : '<span class="mission-reward">Waiting for a thoughtful reply</span>'}</article>`).join('') : '<p class="feature-intro-copy">No questions planted yet.</p>'; }
+document.getElementById('qnaForm').addEventListener('submit', (event) => { event.preventDefault(); guideState.qna.push({ question: document.getElementById('qnaQuestion').value.trim(), subject: document.getElementById('qnaSubject').value, status: 'Planted', answer: '' }); saveRosyState(guideState); event.target.reset(); renderQuestions(); showRosyToast('Your question was planted for a Garden Guide.'); });
+renderQuestions();

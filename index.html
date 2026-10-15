@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f8">
+  <meta name="description" content="Rosy Routine is a gentle study timer that grows your personal garden.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="no-logo.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="progression.css">
+  <title>Rosy Routine | Study garden</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Rosy Routine home">
+        <span><strong>Rosy</strong> Routine<small>study softly, grow steadily</small></span>
+      </a>
+      <div class="top-actions">
+        <span id="todayLabel" class="today-label"></span>
+        <a class="button button-soft" href="online/">Online edition</a>
+        <button id="installButton" class="button button-soft hidden" type="button">Install app</button>
+      </div>
+    </header>
+
+    <nav class="app-nav" aria-label="Rosy Routine sections">
+      <a class="nav-tab active" data-view="dashboard" href="index.html">Overview</a>
+      <a class="nav-tab" href="focus.html">Focus room</a>
+      <a class="nav-tab" href="garden.html">Garden</a>
+      <a class="nav-tab" href="growth.html">Growth</a>
+      <a class="nav-tab" href="calendar.html">Calendar</a>
+      <a class="nav-tab" href="lessons.html">Lessons</a>
+      <a class="nav-tab" href="missions.html">Missions</a>
+      <a class="nav-tab" href="assignments.html">Assignments</a>
+      <a class="nav-tab" href="showcase.html">Showcase</a>
+      <a class="nav-tab" href="guides.html">Guides</a>
+      <a class="nav-tab" href="rewards.html">Rewards</a>
+      <a class="nav-tab buddy-tab" href="study-buddy.html">Study Buddy <span>AI</span></a>
+    </nav>
+
+    <main id="top">
+      <section class="hero-grid view-panel view-dashboard">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR LITTLE STUDY GARDEN</p>
+          <h1>Make space for<br><em>one good session.</em></h1>
+          <p class="hero-text">A calm place to focus, collect tiny wins, and watch your garden bloom one session at a time.</p>
+          <div class="hero-actions">
+            <button id="startHeroButton" class="button button-primary" type="button">Start a session <span>→</span></button>
+            <a class="text-link" href="#garden">Visit my garden</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a pink flower growing in a pot">
+          <div class="sun-disc"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+          <div class="flower flower-hero"><span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="flower-center"></span></div>
+          <div class="stem"></div><div class="leaf leaf-left"></div><div class="leaf leaf-right"></div>
+          <div class="pot"><span></span></div>
+          <p>slow growth is still growth</p>
+        </div>
+      </section>
+
+      <section class="stats-grid view-panel view-dashboard" aria-label="Your study progress">
+        <article class="stat-card"><span class="stat-icon rose">✿</span><div><strong id="flowerCount">0</strong><span>flowers grown</span></div></article>
+        <article class="stat-card"><span class="stat-icon orange">✦</span><div><strong id="pointCount">0</strong><span>petal points</span></div></article>
+        <article class="stat-card"><span class="stat-icon purple">↗</span><div><strong id="streakCount">0 days</strong><span>pink streak</span></div></article>
+      </section>
+
+      <section class="progression-grid view-panel view-dashboard">
+        <article class="progression-card streak-card">
+          <div class="section-heading"><div><p class="eyebrow">CONSISTENCY CLUB</p><h2>Your pink streak</h2></div><span class="flame-mark">✦</span></div>
+          <div class="streak-hero"><strong id="streakHeroCount">0</strong><span>days in a row</span></div>
+          <div id="streakWeek" class="streak-week" aria-label="Last seven study days"></div>
+          <p id="streakMessage" class="helper-text">Start today to light your first day.</p>
+        </article>
+        <article class="progression-card level-card">
+          <div class="section-heading"><div><p class="eyebrow">YOUR PROGRESS</p><h2><span id="levelNumber">Level 1</span> · Soft Launch</h2></div><span id="xpLabel" class="xp-label">0 XP</span></div>
+          <div class="level-art"><span class="level-spark">✦</span><span class="level-number-art" id="levelArtNumber">1</span><span class="level-caption">keep showing up</span></div>
+          <div class="level-track"><span id="levelProgress"></span></div>
+          <div class="level-meta"><span id="levelCurrent">0 XP</span><span id="levelNext">100 XP to Level 2</span></div>
+        </article>
+      </section>
+
+      <section class="achievements-section view-panel view-dashboard">
+        <div class="section-heading"><div><p class="eyebrow">THE ROSY ARCHIVE</p><h2>Little proofs of progress.</h2></div><span id="badgeCount" class="status-pill">0 / 5 badges</span></div>
+        <div id="badgeGrid" class="badge-grid"></div>
+      </section>
+
+      <div class="content-grid view-container">
+        <section class="panel timer-panel view-panel view-focus" id="timer">
+          <div class="section-heading"><div><p class="eyebrow">FOCUS ROOM</p><h2>Ready when you are.</h2></div><span id="timerState" class="status-pill">Ready</span></div>
+          <div class="timer-ring"><div><strong id="timerDisplay">25:00</strong><span id="timerCaption">deep focus</span></div></div>
+          <div class="timer-controls"><button id="timerButton" class="button button-primary" type="button">Start timer</button><button id="resetButton" class="button button-outline" type="button">Reset</button></div>
+          <div class="duration-row"><button class="duration-chip" data-minutes="20" type="button">20 min</button><button class="duration-chip" data-minutes="30" type="button">30 min</button><button class="duration-chip" data-minutes="40" type="button">40 min</button><button class="duration-chip active" data-minutes="25" type="button">25 min</button><button class="duration-chip" data-minutes="45" type="button">45 min</button><button class="duration-chip" data-minutes="60" type="button">60 min</button></div>
+          <div class="study-profile-panel">
+            <label for="profileSubject">Study subject<select id="profileSubject"><option>Biology</option><option>Mathematics</option><option>English</option><option>Science</option><option>History</option><option>Geography</option><option>French</option><option>Igbo</option><option>Yoruba</option><option>Economics</option><option>Physics</option><option>Computer Science</option></select></label>
+            <label for="profileFlower">Flower I am growing<select id="profileFlower"><option>Rose</option><option>Tulip</option><option>Sunflower</option><option>Lily</option><option>Daisy</option><option>Orchid</option><option>Lavender</option><option>Peony</option></select></label>
+          </div>
+          <p class="helper-text">Finish a full session to grow a flower and earn 25 petal points.</p>
+        </section>
+
+        <section class="panel garden-panel view-panel view-garden" id="garden">
+          <div class="section-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h2>The rosy garden</h2></div><span class="garden-count"><span id="gardenCount">0</span>/12</span></div>
+          <div id="gardenGrid" class="garden-grid" aria-live="polite"></div>
+          <div class="unlock-row"><div><strong>Next unlock</strong><span id="nextUnlock">Grow 3 flowers</span></div><div class="progress-track"><span id="unlockProgress"></span></div></div>
+        </section>
+      </div>
+
+      <section class="bottom-grid view-container">
+        <section class="panel checklist-panel view-panel view-tasks"><div class="section-heading"><div><p class="eyebrow">TODAY'S RHYTHM</p><h2>Small steps count.</h2></div><button id="clearTasks" class="icon-button" title="Clear completed tasks" type="button">⌫</button></div><form id="taskForm" class="task-form"><input id="taskInput" type="text" maxlength="70" placeholder="Add a study task..." aria-label="New study task"><button class="button button-dark" type="submit">Add</button></form><ul id="taskList" class="task-list"></ul></section>
+        <section class="panel unlock-panel view-panel view-garden"><div class="section-heading"><div><p class="eyebrow">PETAL SHOP</p><h2>Make it yours.</h2></div><span class="points-badge"><span id="shopPoints">0</span> pts</span></div><div class="shop-items"><button class="shop-item" data-cost="50" data-item="blush pot" type="button"><span class="item-art pot-art blush-pot"></span><span><strong>Blush pot</strong><small>50 pts</small></span></button><button class="shop-item" data-cost="75" data-item="coral bloom" type="button"><span class="item-art flower-art">✿</span><span><strong>Coral bloom</strong><small>75 pts</small></span></button><button class="shop-item" data-cost="100" data-item="starlight" type="button"><span class="item-art star-art">✦</span><span><strong>Starlight</strong><small>100 pts</small></span></button></div><p id="shopMessage" class="helper-text">Earn points by completing focused sessions.</p></section>
+      </section>
+
+      <section class="panel buddy-panel view-panel view-buddy">
+        <div class="section-heading"><div><p class="eyebrow">YOUR STUDY COMPANION</p><h2>Ask, practise, remember.</h2></div><span class="ai-orb">✦ Gemini</span></div>
+        <p class="buddy-intro">Rosy can explain tricky ideas, turn notes into quizzes, and help you make a realistic study plan. Add a few notes so the conversation can meet you where you are.</p>
+        <div class="buddy-layout">
+          <div class="chat-column"><div id="chatMessages" class="chat-messages" aria-live="polite"><div class="chat-bubble bot"><strong>Rosy</strong><p>Hi! What are you studying today? I can explain it simply or quiz you gently.</p></div></div><div class="quick-prompts"><button data-prompt="Explain this topic like I am a beginner." type="button">Explain simply</button><button data-prompt="Give me a five-question quiz on my notes." type="button">Quiz me</button><button data-prompt="Help me plan a 30-minute study session." type="button">Make a plan</button></div><form id="chatForm" class="chat-form"><input id="chatInput" maxlength="1000" placeholder="Ask Rosy anything about your studies..." aria-label="Message Rosy"><button class="button button-primary" type="submit">Send</button></form></div>
+          <aside class="notes-column"><label for="studyNotes">What I am learning</label><textarea id="studyNotes" maxlength="3000" placeholder="Paste a definition, lesson summary, or your own notes here..."></textarea><p class="helper-text">Saved only on this device and shared with Gemini only when you send a message.</p><button id="saveNotes" class="button button-outline" type="button">Save learning notes</button></aside>
+        </div>
+      </section>
+    </main>
+    <footer>Rosy Routine <span>•</span> a softer way to study</footer>
+  </div>
+  <div id="celebration" class="celebration" role="dialog" aria-modal="true" aria-labelledby="celebrationTitle" hidden><div class="celebration-card"><button id="closeCelebration" class="celebration-close" type="button" aria-label="Close celebration">×</button><div class="celebration-flower">✿</div><p class="eyebrow">SESSION COMPLETE</p><h2 id="celebrationTitle">Your future self says thank you.</h2><p id="celebrationCopy">A little focus became a little more you.</p><div class="celebration-rewards"><span>+25 XP</span><span>+25 petals</span></div><button id="celebrationButton" class="button button-primary" type="button">Keep growing</button></div></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

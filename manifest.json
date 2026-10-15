@@ -1,0 +1,13 @@
+{
+  "name": "Rosy Routine - Study Garden",
+  "short_name": "Rosy Routine",
+  "description": "A gentle study timer that grows your personal garden.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff5f8",
+  "theme_color": "#e86c8d",
+  "orientation": "any",
+  "categories": ["education", "productivity"],
+  "id": "rosy-routine",
+  "icons": []
+}

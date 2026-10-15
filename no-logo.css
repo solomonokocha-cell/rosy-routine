@@ -1,0 +1,12 @@
+.brand-mark,
+.auth-mark {
+  display: none !important;
+}
+
+.about-hero-art .about-logo-art {
+  display: block !important;
+}
+
+.brand {
+  gap: 0;
+}

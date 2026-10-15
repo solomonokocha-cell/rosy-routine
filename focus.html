@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff5f8">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="progression.css">
+  <link rel="stylesheet" href="soundscape.css">
+  <title>Rosy Routine | Focus Room</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><a class="brand" href="index.html"><span><strong>Rosy</strong> Routine<small>study softly, grow steadily</small></span></a><div class="top-actions"><span id="offlineStatus" class="offline-status"></span></div></header>
+    <nav class="app-nav" aria-label="Rosy Routine sections"><a class="nav-tab" data-page="dashboard" href="index.html">Overview</a><a class="nav-tab active" data-page="focus" href="focus.html">Focus room</a><a class="nav-tab" data-page="garden" href="garden.html">Garden</a><a class="nav-tab" data-page="rewards" href="rewards.html">Rewards</a><a class="nav-tab" data-page="buddy" href="study-buddy.html">Study Buddy <span>AI</span></a></nav>
+    <main>
+      <section class="focus-page panel"><p class="eyebrow">FOCUS ROOM</p><h1>One quiet hour<br><em>can change the day.</em></h1><div class="timer-ring focus-ring"><div><strong id="focusTimer">25:00</strong><span>deep focus</span></div></div><div class="timer-controls"><button id="focusStart" class="button button-primary" type="button">Start timer</button><button id="focusReset" class="button button-outline" type="button">Reset</button></div><div class="duration-row"><button data-duration="20" class="duration-chip" type="button">20 min</button><button data-duration="30" class="duration-chip" type="button">30 min</button><button data-duration="40" class="duration-chip" type="button">40 min</button><button data-duration="25" class="duration-chip active" type="button">25 min</button><button data-duration="45" class="duration-chip" type="button">45 min</button><button data-duration="60" class="duration-chip" type="button">60 min</button></div><div class="study-profile-panel"><label for="profileSubject">Study subject<select id="profileSubject"><option>Biology</option><option>Mathematics</option><option>English</option><option>Science</option><option>History</option><option>Geography</option><option>French</option><option>Igbo</option><option>Yoruba</option><option>Economics</option><option>Physics</option><option>Computer Science</option></select></label><label for="profileFlower">Flower I am growing<select id="profileFlower"><option>Rose</option><option>Tulip</option><option>Sunflower</option><option>Lily</option><option>Daisy</option><option>Orchid</option><option>Lavender</option><option>Peony</option></select></label></div><p id="focusMessage" class="helper-text">Complete the session to earn coins, water, fertilizer, and XP.</p></section>
+    </main>
+    <footer>Rosy Routine <span>•</span> gentle focus, visible growth</footer>
+  </div>
+  <div id="rosyToast" class="toast" role="status"></div>
+  <script src="site.js"></script><script src="focus-page.js"></script><script src="soundscape.js"></script>
+</body>
+</html>
